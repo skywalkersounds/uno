@@ -1,0 +1,32 @@
+<html>
+    <header>
+        <meta charset="UTF-8">
+        <title>Angular test</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </header>
+    <body>
+       <div ng-app="shop">
+    <div ng-controller="billCtrl">
+        <ol>
+            <li ng-repeat="article in articles">
+                <label>{{article.name}}:</label>
+                <input ng-model="article.price"/>
+                <input type="number" ng-model="article.quantity"/>                
+            </li>
+        </ol>
+        <div>
+            <label>Total facture: </label><span>{{total() | currency:"€"}}</span>            
+        </div>
+        <div>
+             <label>Réduction: </label><span>{{discount | currency: "€"}}</span>
+        </div>
+        <div>
+            <label>Somme à payer: </label><span>{{finalTotal() | currency: "€"}}</span>        
+        </div
+    </div>
+</div>
+
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="scripts/app.js"></script>
+</html>

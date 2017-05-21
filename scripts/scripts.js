@@ -1,2 +1,5 @@
-
-var x = 3;
+angular.module("uno",[])
+    .controller("index",["$scope", function($scope)
+    {
+        $scope.message = "Data from js";
+    }]);
